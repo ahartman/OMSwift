@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTZ-RS-Cvj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intra Table View Controller-->
+        <scene sceneID="3RR-YX-M1p">
+            <objects>
+                <tableViewController storyboardIdentifier="Intraday" id="SuZ-jQ-qpD" customClass="IntraTableViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="21" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sd6-N0-rQC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="21" id="rAQ-N5-GEv" customClass="CustomHeaderCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rAQ-N5-GEv" id="PNr-Iq-FWc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oyz-TO-tho">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="P6t-p7-sep" userLabel="Datetime Header Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzP-xI-oAh" userLabel="Call Price Header Label">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-qx-nRs">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-YC-dYq" userLabel="Put Price Header Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-qB-mG7">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svD-qz-pnd" userLabel="Order Value Header Label">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-za-SJw" userLabel="Index Header Label">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Oyz-TO-tho" firstAttribute="top" secondItem="PNr-Iq-FWc" secondAttribute="top" id="I6J-fp-Kxi"/>
+                                        <constraint firstAttribute="bottom" secondItem="Oyz-TO-tho" secondAttribute="bottom" id="aza-Hl-xK1"/>
+                                        <constraint firstAttribute="trailing" secondItem="Oyz-TO-tho" secondAttribute="trailing" constant="8" id="dsx-wq-Xev"/>
+                                        <constraint firstItem="Oyz-TO-tho" firstAttribute="leading" secondItem="PNr-Iq-FWc" secondAttribute="leading" constant="8" id="gYi-ca-HxR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaHeaderLabel" destination="hRf-qx-nRs" id="Yxw-9k-Yl6"/>
+                                    <outlet property="callPriceHeaderLabel" destination="MzP-xI-oAh" id="Dgm-gO-IYE"/>
+                                    <outlet property="datetimeHeaderLabel" destination="P6t-p7-sep" id="CIK-JL-HCw"/>
+                                    <outlet property="indexHeaderLabel" destination="Cf7-za-SJw" id="Fb5-e4-mmI"/>
+                                    <outlet property="orderValueHeaderLabel" destination="svD-qz-pnd" id="2TL-Vl-7gJ"/>
+                                    <outlet property="putDeltaHeaderLabel" destination="I4c-qB-mG7" id="SKM-bs-stl"/>
+                                    <outlet property="putPriceHeaderLabel" destination="DdJ-YC-dYq" id="5ge-D5-ACH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="21" id="E0H-I6-7g7" customClass="PriceTableViewCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E0H-I6-7g7" id="dvc-J0-F4Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="80E-cc-7oe">
+                                            <rect key="frame" x="8" y="3" width="359" height="15"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="cSt-0t-clU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="boU-Kd-YXj">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="3V9-WZ-nrE" userLabel="Call Delta Text Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="81r-jr-85d">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-7g-rBo">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-u6-fSb">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-Sm-Clm">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="80E-cc-7oe" secondAttribute="trailing" constant="8" id="6Lk-nq-sf4"/>
+                                        <constraint firstItem="80E-cc-7oe" firstAttribute="leading" secondItem="dvc-J0-F4Z" secondAttribute="leading" constant="8" id="Ajc-tL-KJc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="80E-cc-7oe" secondAttribute="bottom" constant="-8" id="Bo0-SI-fIU"/>
+                                        <constraint firstItem="80E-cc-7oe" firstAttribute="top" secondItem="dvc-J0-F4Z" secondAttribute="topMargin" constant="-8" id="N1F-C8-F77"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaTextLabel" destination="3V9-WZ-nrE" id="Ne1-NQ-anu"/>
+                                    <outlet property="callPriceTextLabel" destination="boU-Kd-YXj" id="kvh-XE-KTK"/>
+                                    <outlet property="datetimeTextLabel" destination="cSt-0t-clU" id="n6D-dK-hFO"/>
+                                    <outlet property="indexTextLabel" destination="a8t-Sm-Clm" id="tuc-4k-n3L"/>
+                                    <outlet property="orderValueTextLabel" destination="Xdd-u6-fSb" id="Rvh-u4-jwz"/>
+                                    <outlet property="putDeltaTextLabel" destination="X3s-7g-rBo" id="rZk-J2-3A8"/>
+                                    <outlet property="putPriceTextLabel" destination="81r-jr-85d" id="BnB-Ay-OIf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FooterCell" rowHeight="21" id="qzv-ck-uiL" userLabel="FooterCell" customClass="CustomFooterCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="70" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qzv-ck-uiL" id="JDW-Pj-XkJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-hA-SLE">
+                                            <rect key="frame" x="8" y="3" width="359" height="15"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="kpB-p0-Ft2" userLabel="Datetime Footer Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="CzQ-3i-4ix" userLabel="Call Price Footer Label">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="Kkc-PI-Wh5" userLabel="Call Delta Footer Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-vM-p61" userLabel="Put Price Footer Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="5kD-hy-O3b" userLabel="Put Delta Footer LabelLabel">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUc-Gr-7aH" userLabel="Order Value Footer Label">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrd-Hn-Bua" userLabel="Index Footer Label">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="k9m-hA-SLE" firstAttribute="leading" secondItem="JDW-Pj-XkJ" secondAttribute="leading" constant="8" id="9AC-0X-LLH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="k9m-hA-SLE" secondAttribute="bottom" constant="-8" id="EEj-Wy-K7U"/>
+                                        <constraint firstItem="k9m-hA-SLE" firstAttribute="top" secondItem="JDW-Pj-XkJ" secondAttribute="topMargin" constant="-8" id="VBH-tn-shk"/>
+                                        <constraint firstAttribute="trailing" secondItem="k9m-hA-SLE" secondAttribute="trailing" constant="8" id="km5-fB-puX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaFooterLabel" destination="Kkc-PI-Wh5" id="foQ-pH-DnS"/>
+                                    <outlet property="callPriceFooterLabel" destination="CzQ-3i-4ix" id="p8P-9g-A9Z"/>
+                                    <outlet property="datetimeFooterLabel" destination="kpB-p0-Ft2" id="nKp-du-OjM"/>
+                                    <outlet property="indexFooterLabel" destination="Wrd-Hn-Bua" id="lVE-2k-1Lq"/>
+                                    <outlet property="orderValueFooterLabel" destination="OUc-Gr-7aH" id="zGN-Bp-0qg"/>
+                                    <outlet property="putDeltaFooterLabel" destination="5kD-hy-O3b" id="MeC-lt-gy5"/>
+                                    <outlet property="putPriceFooterLabel" destination="ERh-vM-p61" id="3sw-OJ-rfq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SuZ-jQ-qpD" id="Pus-m0-3xP"/>
+                            <outlet property="delegate" destination="SuZ-jQ-qpD" id="3s5-SD-RuL"/>
+                        </connections>
+                    </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Uxu-dQ-6fJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Quotes ophalen">
+                                <attributes>
+                                    <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2p-A2-NdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="905"/>
+        </scene>
+        <!--Inter Graph-->
+        <scene sceneID="LlP-os-W0Z">
+            <objects>
+                <viewController storyboardIdentifier="InterGraph" id="ufX-zr-2WY" userLabel="Inter Graph" customClass="InterGraphViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GCL-JF-ZGw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="knE-kI-GYf"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1t-aJ-wBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2138" y="-524"/>
+        </scene>
+        <!--Pager-->
+        <scene sceneID="6im-o2-DJg">
+            <objects>
+                <pageViewController transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Q4-e0-BUl" userLabel="Pager" customClass="Pager" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Order" id="vtm-bQ-atR">
+                        <barButtonItem key="rightBarButtonItem" image="settings" landscapeImage="settings" id="YJ3-sZ-VWR">
+                            <connections>
+                                <segue destination="k8z-6u-lxo" kind="show" id="xBJ-Xg-Ops"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zj1-gb-MlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="190"/>
+        </scene>
+        <!--Interday-->
+        <scene sceneID="S3f-L2-Knm">
+            <objects>
+                <tableViewController storyboardIdentifier="Interday" id="oVr-9u-3FR" userLabel="Interday" customClass="InterdayTableViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="21" sectionHeaderHeight="28" sectionFooterHeight="28" id="b3A-JP-lrG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="21" id="IET-Zu-bFI" customClass="CustomHeaderCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IET-Zu-bFI" id="ncf-Fl-Q0F">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rib-8q-hdG">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-k8-vnn" userLabel="Datetime Header Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSG-Cd-04W" userLabel="Call Price Header Label">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOk-Gm-noO">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=compact" hidden="NO"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-lY-ALy" userLabel="Put Price Header Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcI-xh-hU7">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=compact" hidden="NO"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA8-cw-q2f" userLabel="Order Value Header Label">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-Kp-lV4" userLabel="Index Header Label">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rib-8q-hdG" firstAttribute="leading" secondItem="ncf-Fl-Q0F" secondAttribute="leading" constant="8" id="LHE-iZ-Hn4"/>
+                                        <constraint firstAttribute="bottom" secondItem="rib-8q-hdG" secondAttribute="bottom" id="YSo-Pk-EA9"/>
+                                        <constraint firstAttribute="trailing" secondItem="rib-8q-hdG" secondAttribute="trailing" constant="8" id="e61-no-Vw8"/>
+                                        <constraint firstItem="rib-8q-hdG" firstAttribute="top" secondItem="ncf-Fl-Q0F" secondAttribute="top" id="jVx-O7-8T1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaHeaderLabel" destination="WOk-Gm-noO" id="wpR-Gy-BbK"/>
+                                    <outlet property="callPriceHeaderLabel" destination="vSG-Cd-04W" id="n3g-Pp-Nvk"/>
+                                    <outlet property="datetimeHeaderLabel" destination="lYj-k8-vnn" id="Pl7-n8-Cyb"/>
+                                    <outlet property="indexHeaderLabel" destination="5bd-Kp-lV4" id="0QR-KD-RiA"/>
+                                    <outlet property="orderValueHeaderLabel" destination="JA8-cw-q2f" id="3yC-Sp-pxX"/>
+                                    <outlet property="putDeltaHeaderLabel" destination="WcI-xh-hU7" id="dQQ-Zs-bWU"/>
+                                    <outlet property="putPriceHeaderLabel" destination="pXC-lY-ALy" id="GW5-ui-PHa"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="21" id="QiY-5y-C2M" customClass="PriceTableViewCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QiY-5y-C2M" id="bhd-h6-oaV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bd5-1H-ozd">
+                                            <rect key="frame" x="8" y="3" width="359" height="15"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="xqm-lI-0H0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="KJX-Ql-33v">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-5v-ejB" userLabel="Call Delta Text Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="mSy-g3-J3G">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="8pJ-8i-l3j">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=compact" hidden="NO"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VE5-iC-sNL">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-S1-2Lr">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Bd5-1H-ozd" firstAttribute="leading" secondItem="bhd-h6-oaV" secondAttribute="leading" constant="8" id="Rpx-f2-qS3"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bd5-1H-ozd" secondAttribute="trailing" constant="8" id="deU-1X-adu"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bd5-1H-ozd" secondAttribute="bottom" constant="-8" id="mvM-7G-th3"/>
+                                        <constraint firstItem="Bd5-1H-ozd" firstAttribute="top" secondItem="bhd-h6-oaV" secondAttribute="topMargin" constant="-8" id="opS-Tu-cA6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaTextLabel" destination="h7d-5v-ejB" id="Hnm-39-dNP"/>
+                                    <outlet property="callPriceTextLabel" destination="KJX-Ql-33v" id="xqd-7g-Qpn"/>
+                                    <outlet property="datetimeTextLabel" destination="xqm-lI-0H0" id="YJZ-4Q-VwJ"/>
+                                    <outlet property="indexTextLabel" destination="2uX-S1-2Lr" id="AyB-fe-MR0"/>
+                                    <outlet property="orderValueTextLabel" destination="VE5-iC-sNL" id="N8a-h7-kyE"/>
+                                    <outlet property="putDeltaTextLabel" destination="8pJ-8i-l3j" id="Cxl-ar-X62"/>
+                                    <outlet property="putPriceTextLabel" destination="mSy-g3-J3G" id="EA0-4h-5jy"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FooterCell" rowHeight="21" id="T8B-Ln-3TZ" userLabel="FooterCell" customClass="CustomFooterCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="70" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8B-Ln-3TZ" id="Vc5-GA-pQk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RHa-bD-88S">
+                                            <rect key="frame" x="8" y="3" width="359" height="15"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="T1E-lU-aAU" userLabel="Datetime Footer Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-BP-Ban" userLabel="Call Price Footer Label">
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="xqT-XZ-SMQ" userLabel="Call Delta Footer Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-jJ-Xn1" userLabel="Put Price Footer Label">
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="Yxz-wx-SZ4" userLabel="Put Delta Footer LabelLabel">
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" hidden="YES"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-qV-KkV" userLabel="Order Value Footer Label">
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-LF-PG5" userLabel="Index Footer Label">
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RHa-bD-88S" secondAttribute="trailing" constant="8" id="6Ki-Ij-f8a"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RHa-bD-88S" secondAttribute="bottom" constant="-8" id="dDt-oI-DhG"/>
+                                        <constraint firstItem="RHa-bD-88S" firstAttribute="leading" secondItem="Vc5-GA-pQk" secondAttribute="leading" constant="8" id="iuB-g9-29x"/>
+                                        <constraint firstItem="RHa-bD-88S" firstAttribute="top" secondItem="Vc5-GA-pQk" secondAttribute="topMargin" constant="-8" id="vc9-2X-AaV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callDeltaFooterLabel" destination="xqT-XZ-SMQ" id="3oC-9A-pmE"/>
+                                    <outlet property="callPriceFooterLabel" destination="cdH-BP-Ban" id="WQi-6Z-Fg2"/>
+                                    <outlet property="datetimeFooterLabel" destination="T1E-lU-aAU" id="9DI-cx-i8i"/>
+                                    <outlet property="indexFooterLabel" destination="Wad-LF-PG5" id="s1M-aO-VRB"/>
+                                    <outlet property="orderValueFooterLabel" destination="Zdm-qV-KkV" id="zok-PA-mdk"/>
+                                    <outlet property="putDeltaFooterLabel" destination="Yxz-wx-SZ4" id="z1X-80-cUg"/>
+                                    <outlet property="putPriceFooterLabel" destination="qY9-jJ-Xn1" id="dXU-9B-A0l"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oVr-9u-3FR" id="9NZ-xN-RO7"/>
+                            <outlet property="delegate" destination="oVr-9u-3FR" id="UjV-tc-acK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bp-4D-i84" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="-523"/>
+        </scene>
+        <!--Notification Manager-->
+        <scene sceneID="k1h-WE-YTK">
+            <objects>
+                <viewController storyboardIdentifier="Notification" id="k8z-6u-lxo" userLabel="Notification Manager" customClass="NotificationManagerViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uQM-lj-ZyY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie niveau" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsC-Rx-S2x">
+                                <rect key="frame" x="121" y="74" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2au-cx-EJh">
+                                <rect key="frame" x="27.5" y="95" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lxa-HK-PBT"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie frequentie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-Mb-Izr">
+                                <rect key="frame" x="107" y="295" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2D-At-byK">
+                                <rect key="frame" x="27.5" y="315" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1kz-yW-Ttj"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie met geluid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN1-sV-wEG">
+                                <rect key="frame" x="50" y="535" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RE7-Ah-ezs">
+                                <rect key="frame" x="235" y="530" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wVF-Mb-Izr" firstAttribute="centerX" secondItem="uQM-lj-ZyY" secondAttribute="centerX" id="0WD-uQ-xIa"/>
+                            <constraint firstItem="Y2D-At-byK" firstAttribute="leading" secondItem="2au-cx-EJh" secondAttribute="leading" id="5Mn-3w-Nwc"/>
+                            <constraint firstItem="2au-cx-EJh" firstAttribute="top" secondItem="AsC-Rx-S2x" secondAttribute="bottom" id="Fgh-kd-tMP"/>
+                            <constraint firstItem="Y2D-At-byK" firstAttribute="top" secondItem="2au-cx-EJh" secondAttribute="bottom" constant="20" id="Npr-y6-ezC"/>
+                            <constraint firstItem="RE7-Ah-ezs" firstAttribute="centerY" secondItem="rN1-sV-wEG" secondAttribute="centerY" id="QyX-ZT-MrD"/>
+                            <constraint firstItem="AsC-Rx-S2x" firstAttribute="centerX" secondItem="uQM-lj-ZyY" secondAttribute="centerX" id="Rnt-Xj-jN2"/>
+                            <constraint firstItem="2au-cx-EJh" firstAttribute="centerX" secondItem="uQM-lj-ZyY" secondAttribute="centerX" id="TEc-pO-mzf"/>
+                            <constraint firstItem="2au-cx-EJh" firstAttribute="centerX" secondItem="uQM-lj-ZyY" secondAttribute="centerX" id="V2n-fk-yKr"/>
+                            <constraint firstItem="rN1-sV-wEG" firstAttribute="leading" secondItem="L0z-wq-igc" secondAttribute="leading" constant="50" id="aVR-Q1-Kqv"/>
+                            <constraint firstItem="RE7-Ah-ezs" firstAttribute="leading" secondItem="rN1-sV-wEG" secondAttribute="trailing" constant="22" id="bR4-Ss-90r"/>
+                            <constraint firstItem="AsC-Rx-S2x" firstAttribute="top" secondItem="L0z-wq-igc" secondAttribute="top" constant="10" id="fpp-ey-3BI"/>
+                            <constraint firstItem="wVF-Mb-Izr" firstAttribute="top" secondItem="2au-cx-EJh" secondAttribute="bottom" id="l76-EY-xDY"/>
+                            <constraint firstItem="RE7-Ah-ezs" firstAttribute="top" secondItem="Y2D-At-byK" secondAttribute="bottom" constant="15" id="lgb-Pv-dYZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L0z-wq-igc"/>
+                    </view>
+                    <connections>
+                        <outlet property="frequencyPicker" destination="Y2D-At-byK" id="7r2-Xv-I9d"/>
+                        <outlet property="severityPicker" destination="2au-cx-EJh" id="QXG-Cu-RyJ"/>
+                        <outlet property="soundSwitch" destination="RE7-Ah-ezs" id="n2M-Lm-Zcv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JK-Ew-6lC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137.5" y="189.08450704225353"/>
+        </scene>
+        <!--Intra Graph-->
+        <scene sceneID="PtR-yz-HY0">
+            <objects>
+                <viewController storyboardIdentifier="IntraGraph" id="249-w8-c64" userLabel="Intra Graph" customClass="IntraGraphViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BA1-wZ-kCy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="iDw-yB-4U3"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G72-LX-bmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2138" y="904"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N6P-rF-cRj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTZ-RS-Cvj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NCy-LL-WA9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Q4-e0-BUl" kind="relationship" relationship="rootViewController" id="NNg-nb-pQV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HR3-Bx-6Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545.625" y="190.14084507042253"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="settings" width="19.200000762939453" height="19.200000762939453"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</document>
