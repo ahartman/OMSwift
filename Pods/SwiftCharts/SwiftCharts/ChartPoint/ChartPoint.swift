@@ -10,8 +10,8 @@ import UIKit
 
 open class ChartPoint: Hashable, Equatable, CustomStringConvertible {
     
-    open let x: ChartAxisValue
-    open let y: ChartAxisValue
+    public let x: ChartAxisValue
+    public let y: ChartAxisValue
     
     required public init(x: ChartAxisValue, y: ChartAxisValue) {
         self.x = x
@@ -22,8 +22,9 @@ open class ChartPoint: Hashable, Equatable, CustomStringConvertible {
         return "\(x), \(y)"
     }
     
-    open var hashValue: Int {
-        return 31 &* x.hashValue &+ y.hashValue
+    open func hash(into hasher: inout Hasher) {
+        let hash = 31 &* x.hashValue &+ y.hashValue
+        hasher.combine(hash)
     }
 }
 

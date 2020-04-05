@@ -91,12 +91,12 @@ public protocol ChartDelegate {
 open class Chart: Pannable, Zoomable {
 
     /// The view that the chart is drawn in
-    open let view: ChartView
+    public let view: ChartView
 
-    open let containerView: UIView
-    open let contentView: UIView
-    open let drawersContentView: UIView
-    open let containerViewUnclipped: UIView
+    public let containerView: UIView
+    public let contentView: UIView
+    public let drawersContentView: UIView
+    public let containerViewUnclipped: UIView
 
     /// The layers of the chart that are drawn in the view
     fileprivate let layers: [ChartLayer]
@@ -639,7 +639,8 @@ open class ChartView: UIView, UIGestureRecognizerDelegate {
             chart?.onZoomEnd()
         case .failed:
             fallthrough
-        case .possible: break
+        default:
+            break
         }
         
         sender.scale = 1.0
@@ -676,10 +677,10 @@ open class ChartView: UIView, UIGestureRecognizerDelegate {
             
             let location = sender.location(in: self)
             
-            var deltaX = lastPanTranslation.map{trans.x - $0.x} ?? trans.x
+            let deltaX = lastPanTranslation.map{trans.x - $0.x} ?? trans.x
             let deltaY = lastPanTranslation.map{trans.y - $0.y} ?? trans.y
 
-            var (finalDeltaX, finalDeltaY) = finalPanDelta(deltaX: deltaX, deltaY: deltaY)
+            let (finalDeltaX, finalDeltaY) = finalPanDelta(deltaX: deltaX, deltaY: deltaY)
             
             lastPanTranslation = trans
             
@@ -788,11 +789,13 @@ open class ChartView: UIView, UIGestureRecognizerDelegate {
             
             chart.onPanEnd()
             
-        case .cancelled: break;
-        case .failed: break;
+        case .cancelled, .failed:
+            fallthrough
         case .possible:
 //            sender.state = UIGestureRecognizerState.Changed
-            break;
+            fallthrough
+        @unknown default:
+            break
         }
     }
     

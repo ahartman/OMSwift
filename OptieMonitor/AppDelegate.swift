@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if targetEnvironment(simulator)
         dataURL = "http://cake.local/orders.json?id=ahartman&action="
         #else
-        dataURL = "https://nasneijzen.synology.me:1010/orders.json?id=ahartman&action="
+        dataURL = "https://nastifou.synology.me:1010/orders.json?id=ahartman&action="
         #endif
 
         UINavigationBar.appearance().isTranslucent = false

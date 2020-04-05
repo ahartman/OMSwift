@@ -122,7 +122,7 @@ open class ChartPointsLineTrackerLayer<T: ChartPoint, U>: ChartPointsLayer<T> {
     
     open var positionUpdateHandler: (([ChartTrackerSelectedChartPoint<T, U>]) -> Void)?
     
-    open let lines: [ChartTrackerLineModel<T, U>]
+    public let lines: [ChartTrackerLineModel<T, U>]
     open var lineModels: [ChartTrackerLineLayerModel<T, U>] = []
     
     fileprivate var currentIntersections: [ChartTrackerIntersection<T, U>] = []
@@ -319,7 +319,7 @@ open class ChartPointsLineTrackerLayer<T: ChartPoint, U>: ChartPointsLayer<T> {
         if lineView == nil {
             let lineView = UIView()
             lineView.frame.size = CGSize(width: 2, height: 10000000)
-            lineView.backgroundColor = UIColor.black
+            lineView.backgroundColor = self.lineColor
             chart?.addSubviewNoTransform(lineView)
             self.lineView = lineView
         }
