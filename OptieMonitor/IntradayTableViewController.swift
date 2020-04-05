@@ -49,7 +49,6 @@ class IntraTableViewController: OMTableViewController {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let url = URL(string: dataURL + action)!
-        //let url = URL(string: "http://localhost:8090/polls/list")!
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
            do {
