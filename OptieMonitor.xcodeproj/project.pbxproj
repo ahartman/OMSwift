@@ -18,6 +18,7 @@
 		E857FC9720EF539F003C32A1 /* NotificationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857FC9620EF539F003C32A1 /* NotificationManagerViewController.swift */; };
 		E863C2A21DFED0E0004BA371 /* InterGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E863C2A11DFED0E0004BA371 /* InterGraphViewController.swift */; };
 		E87826251DBA890900DCD88C /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87826241DBA890900DCD88C /* CustomHeaderCell.swift */; };
+		E88F0B552439DE80003E445C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88F0B542439DE80003E445C /* Launch Screen.storyboard */; };
 		E89A98F11F80EE62000BEC4E /* Purr.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E89A98F01F80EE5C000BEC4E /* Purr.aiff */; };
 		E89F99C81F35A03F007BA5B8 /* OMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F99C71F35A03F007BA5B8 /* OMTableViewController.swift */; };
 		E89F99CA1F35A708007BA5B8 /* OMGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F99C91F35A708007BA5B8 /* OMGraphViewController.swift */; };
@@ -46,6 +47,7 @@
 		E857FC9620EF539F003C32A1 /* NotificationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerViewController.swift; sourceTree = "<group>"; };
 		E863C2A11DFED0E0004BA371 /* InterGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterGraphViewController.swift; sourceTree = "<group>"; };
 		E87826241DBA890900DCD88C /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
+		E88F0B542439DE80003E445C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E89A98F01F80EE5C000BEC4E /* Purr.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Purr.aiff; sourceTree = "<group>"; };
 		E89F99C71F35A03F007BA5B8 /* OMTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMTableViewController.swift; sourceTree = "<group>"; };
 		E89F99C91F35A708007BA5B8 /* OMGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMGraphViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E8EE13D51DFE6B5D0008E8FD /* Defaults.swift */,
 				489002941BFE203800E21C76 /* Info.plist */,
 				4890028F1BFE203800E21C76 /* Assets.xcassets */,
+				E88F0B542439DE80003E445C /* Launch Screen.storyboard */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				E84A1C9F20A6E45B009A5F84 /* Glass.aiff in Resources */,
 				E89A98F11F80EE62000BEC4E /* Purr.aiff in Resources */,
 				489002901BFE203800E21C76 /* Assets.xcassets in Resources */,
+				E88F0B552439DE80003E445C /* Launch Screen.storyboard in Resources */,
 				4890028E1BFE203700E21C76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +456,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OptieMonitor/OptieMonitor.entitlements;
 				DEVELOPMENT_TEAM = V2LV7426WZ;
@@ -477,7 +481,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OptieMonitor/OptieMonitor.entitlements;
 				DEVELOPMENT_TEAM = V2LV7426WZ;
