@@ -12,7 +12,7 @@ class IntraTableViewController: OMTableViewController {
         super.viewDidLoad()
         // enter foreground
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-       //add pull down to refresh
+        //add pull down to refresh
         self.refreshControl?.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControl.Event.valueChanged)
         // add double tap
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
@@ -51,31 +51,33 @@ class IntraTableViewController: OMTableViewController {
         let url = URL(string: dataURL + action)!
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
-           do {
+            do {
                 //let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
                 //print(json)
                 let incomingData = try decoder.decode(RestData.self, from: data!)
-            incoming = incomingData
-            //print("incoming: \(action)")
-            //print(incoming)
-            DispatchQueue.main.sync {
+                incoming = incomingData
+                print("incoming: \(action)")
+                print(incoming)
+                DispatchQueue.main.sync {
                     intraLines = incomingData.intraday ?? intraLines
                     interLines = incomingData.interday ?? interLines
                     quotesDatetime = incomingData.datetime!
                     notificationSet = incomingData.notificationSettings
                     notificationSetOrg = incomingData.notificationSettings
                     self.tableView.reloadData()
-                    //print("reloadData")
-               }
+                    print("reloadData")
+                }
                 if let message = incomingData.message {
-                    self.showAlert(messageText: message)
+                    DispatchQueue.main.async {
+                        self.showAlert(messageText: message)
+                    }
                 }
             } catch {
                 print("error trying to convert data to JSON")
                 print(error)
             }
-            }
-            .resume()
+        }
+        .resume()
     }
 
     func showAlert(messageText: String) {
