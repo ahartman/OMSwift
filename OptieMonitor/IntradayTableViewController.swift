@@ -19,7 +19,6 @@ class IntraTableViewController: OMTableViewController {
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
         getJsonData(action: "currentOrder")
-
     }
 
     @objc func willEnterForeground() {
@@ -48,7 +47,7 @@ class IntraTableViewController: OMTableViewController {
     func getJsonData(action: String) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        let url = URL(string: dataURL + action)!
+        let url = URL(string: dataURL + action + "&apns=" + deviceTokenString)!
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             do {
@@ -56,8 +55,8 @@ class IntraTableViewController: OMTableViewController {
                 //print(json)
                 let incomingData = try decoder.decode(RestData.self, from: data!)
                 incoming = incomingData
-                print("incoming: \(action)")
-                print(incoming)
+                //print("incoming: \(action)")
+                //print(incoming)
                 DispatchQueue.main.sync {
                     intraLines = incomingData.intraday ?? intraLines
                     interLines = incomingData.interday ?? interLines
@@ -65,7 +64,6 @@ class IntraTableViewController: OMTableViewController {
                     notificationSet = incomingData.notificationSettings
                     notificationSetOrg = incomingData.notificationSettings
                     self.tableView.reloadData()
-                    print("reloadData")
                 }
                 if let message = incomingData.message {
                     DispatchQueue.main.async {
@@ -73,7 +71,7 @@ class IntraTableViewController: OMTableViewController {
                     }
                 }
             } catch {
-                print("error trying to convert data to JSON")
+                print("Error trying to convert data to JSON")
                 print(error)
             }
         }

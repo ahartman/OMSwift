@@ -8,6 +8,7 @@
 import UserNotifications
 import UIKit
 var dataURL = ""
+var deviceTokenString = ""
 var chartFrame = CGRect(x:0, y:0, width: 0, height: 0)
 
 @UIApplicationMain
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
-        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print("APNs token: \(deviceTokenString)")
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
