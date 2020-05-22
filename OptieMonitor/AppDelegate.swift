@@ -8,7 +8,7 @@
 import UserNotifications
 import UIKit
 var dataURL = ""
-var deviceTokenString = ""
+var deviceTokenString = "0"
 var chartFrame = CGRect(x:0, y:0, width: 0, height: 0)
 
 @UIApplicationMain
@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         
-       // Check if launched from notification
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
             print("Received in didFinishLaunchingWithOptions: \(notification)")
         }
@@ -34,12 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // Convert token to string
         deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print("APNs token: \(deviceTokenString)")
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // Print the error to console (you should alert the user that registration failed)
         print("APNs registration failed: \(error)")
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -57,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-        // Print notification payload data
         print("Received in didReceiveRemoteNotification: \(data)")
     }
 }

@@ -131,13 +131,13 @@
 				E87826241DBA890900DCD88C /* CustomHeaderCell.swift */,
 				E8E8A5E21DD8970F00DC8335 /* CustomFooterCell.swift */,
 				489002B31C0437C600E21C76 /* Theme */,
+				E88F0B542439DE80003E445C /* Launch Screen.storyboard */,
 				4890028C1BFE203700E21C76 /* Main.storyboard */,
 				E89A98F01F80EE5C000BEC4E /* Purr.aiff */,
 				E84A1C9E20A6E45B009A5F84 /* Glass.aiff */,
 				E8EE13D51DFE6B5D0008E8FD /* Defaults.swift */,
 				489002941BFE203800E21C76 /* Info.plist */,
 				4890028F1BFE203800E21C76 /* Assets.xcassets */,
-				E88F0B542439DE80003E445C /* Launch Screen.storyboard */,
 			);
 			name = resources;
 			sourceTree = "<group>";

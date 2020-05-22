@@ -11,7 +11,7 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
     @IBOutlet weak var frequencyPicker: UIPickerView!
     @IBOutlet weak var soundSwitch: UISwitch!
     
-    var severityData = ["Alle mutaties","Onveranderd en negatief","Laatste mutatie negatief","Vandaag negatief","Order negatief","Geen notificaties"]
+    var severityData = ["Alle mutaties","Onveranderd en negatief","Laatste mutatie negatief","Vandaag negatief","Order negatief","Geen meldingen"]
     var frequencyData = ["Elk kwartier","Elk half uur","Elk uur","Geen"]
 
     override func viewDidLoad() {
@@ -61,7 +61,6 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
     }
      @objc func action(sender: UISwitch) {
         notificationSet.sound = soundSwitch.isOn ? 1 : 0
-        print(notificationSet)
     }
     func postJSONData(action: String, completion:((Error?) -> Void)?) {
         let encoder = JSONEncoder()
@@ -89,19 +88,11 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
             }
             // APIs usually respond with the data you just sent in your POST request
             if responseData != nil {
-                self.showAlert(messageText: "Instellingen gewijzigd")
+                print("Instellingen gewijzigd")
             } else {
                 print("No readable data received in response")
             }
         }
         task.resume()
-    }
-    func showAlert(messageText: String) {
-        let alert = UIAlertController(title: "Notificaties", message: messageText, preferredStyle: .actionSheet)
-        self.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 2 //seconds
-        DispatchQueue.main.asyncAfter(deadline: when){
-            alert.dismiss(animated: true, completion: nil)
-        }
     }
 }

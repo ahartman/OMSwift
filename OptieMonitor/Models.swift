@@ -49,17 +49,3 @@ struct RestData: Decodable {
 struct Result: Decodable {
     var status: String
 }
-/*
- struct Polls: Decodable {
-    var id: String
-    var title: String
-    var option1: String
-    var option2: String
-    var votes1: Int
-    var votes2: Int
-}
-struct Project2: Decodable {
-    let result: Result
-    let polls: [Polls]
-}
- */
