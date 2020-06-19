@@ -48,27 +48,29 @@ class IntraTableViewController: OMTableViewController {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let url = URL(string: dataURL + action + "&apns=" + deviceTokenString)!
-        print(url)
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             do {
                 //let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
                 //print(json)
-                let incomingData = try decoder.decode(RestData.self, from: data!)
-                incoming = incomingData
-                //print("incoming: \(action)")
-                //print(incoming)
-                DispatchQueue.main.sync {
-                    intraLines = incomingData.intraday ?? intraLines
-                    interLines = incomingData.interday ?? interLines
-                    quotesDatetime = incomingData.datetime!
-                    notificationSet = incomingData.notificationSettings
-                    notificationSetOrg = incomingData.notificationSettings
-                    self.tableView.reloadData()
-                }
-                if let message = incomingData.message {
-                    DispatchQueue.main.async {
-                        self.showAlert(messageText: message)
+                if let incoming = data
+                {
+                    let incomingData = try decoder.decode(RestData.self, from: incoming)
+                    //incoming = incomingData
+                    //print("incoming: \(action)")
+                    //print(incoming)
+                    DispatchQueue.main.sync {
+                        intraLines = incomingData.intraday ?? intraLines
+                        interLines = incomingData.interday ?? interLines
+                        quotesDatetime = incomingData.datetime!
+                        notificationSet = incomingData.notificationSettings
+                        notificationSetOrg = incomingData.notificationSettings
+                        self.tableView.reloadData()
+                    }
+                    if let message = incomingData.message {
+                        DispatchQueue.main.async {
+                            self.showAlert(messageText: message)
+                        }
                     }
                 }
             } catch {
