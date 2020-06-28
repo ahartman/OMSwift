@@ -48,6 +48,7 @@ class IntraTableViewController: OMTableViewController {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let url = URL(string: dataURL + action + "&apns=" + deviceTokenString)!
+        print(url);
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             do {

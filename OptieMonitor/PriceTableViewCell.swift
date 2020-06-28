@@ -19,8 +19,11 @@ class PriceTableViewCell: UITableViewCell {
     @IBOutlet weak var orderValueTextLabel: UILabel!
     @IBOutlet weak var indexTextLabel: UILabel!
     
-    func configure(_ lines: [QuoteLine], row: Int/*, source: String*/) {
+    func configure(_ lines: [QuoteLine], row: Int) {
         let line = lines[row]
+        let customGreen = UIColor(red : 81.0/255.0, green : 199.0/255.0, blue : 69.0/255.0, alpha : 1)
+        let numberFormatter = NumberFormatter()
+        let euro = "€ "
 
         let orderValue = (line.callValue+line.putValue)*line.nrContracts
         let orderFirstValue = (lines[0].callValue+lines[0].putValue)*line.nrContracts
@@ -52,28 +55,31 @@ class PriceTableViewCell: UITableViewCell {
         datetimeTextLabel.text = line.datetimeQuote
 
         // prices
-        let customGreen = UIColor(red : 81.0/255.0, green : 199.0/255.0, blue : 69.0/255.0, alpha : 1)
-        let numberFormatter = NumberFormatter()
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.locale = Locale(identifier: "nl_BE")
-        numberFormatter.numberStyle = .currency
-        callPriceTextLabel.text = numberFormatter.string(from: NSNumber(value: line.callValue))
-        putPriceTextLabel.text = numberFormatter.string(from: NSNumber(value: line.putValue))
+        numberFormatter.numberStyle = .decimal
+        callPriceTextLabel.text = euro +  numberFormatter.string(from: NSNumber(value: line.callValue))!
+        putPriceTextLabel.text = numberFormatter.string(from: NSNumber(value: line.putValue))!
 
         // delta
         numberFormatter.positivePrefix = numberFormatter.plusSign
-        callDeltaTextLabel.text = (callChanged == 0) ? " " : numberFormatter.string(from: NSNumber(value: callDelta))
+        callDeltaTextLabel.text = (callChanged == 0) ? " " : euro + numberFormatter.string(from: NSNumber(value: callDelta))!
         callDeltaTextLabel.textColor = (callDelta < 0) ? customGreen : UIColor.red
-        putDeltaTextLabel.text = (putChanged == 0) ? " " : numberFormatter.string(from: NSNumber(value: putDelta))
+        putDeltaTextLabel.text = (putChanged == 0) ? " " : euro + numberFormatter.string(from: NSNumber(value: putDelta))!
         putDeltaTextLabel.textColor = (putDelta < 0) ? customGreen : UIColor.red
 
         // orderValue
         numberFormatter.maximumFractionDigits = 0
-        orderValueTextLabel.text = (orderChanged == 0) ? " " : numberFormatter.string(from: NSNumber(value: orderDelta))
-        orderValueTextLabel.textColor = (orderDelta < 0) ? customGreen : UIColor.red
+        if(row > 0){
+            orderValueTextLabel.text = (orderChanged == 0) ? " " : euro + numberFormatter.string(from: NSNumber(value: orderDelta))!
+            orderValueTextLabel.textColor = (orderDelta < 0) ? customGreen : UIColor.red
+        } else {
+            orderValueTextLabel.text = numberFormatter.string(from: NSNumber(value: orderDelta))
+            orderValueTextLabel.text = String(describing: orderValueTextLabel.text!.dropFirst(1))
+            orderValueTextLabel.text = euro + orderValueTextLabel.text!
+        }
         
         // index
-        numberFormatter.numberStyle = .decimal
         indexTextLabel.text = (indexDelta == 0) ? " " : numberFormatter.string(from: NSNumber(value: indexDelta))
         if(row == 0){
             indexTextLabel.text = String(describing: indexTextLabel.text!.dropFirst(1))
