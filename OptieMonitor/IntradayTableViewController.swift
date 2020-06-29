@@ -62,7 +62,7 @@ class IntraTableViewController: OMTableViewController {
                         quotesDatetime = incomingData.datetime!
                         notificationSet = incomingData.notificationSettings
                         notificationSetOrg = incomingData.notificationSettings
-                        orderCaption = incomingData.caption!
+                        orderCaption = incomingData.caption ?? "no caption"
                         self.tableView.reloadData()
                     }
                     if let message = incomingData.message {

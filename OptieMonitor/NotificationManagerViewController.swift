@@ -30,7 +30,7 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if(notificationSet != notificationSetOrg) {
-           postJSONData(action: "notificationSettings") { (error) in
+            postJSONData(action: "notificationSettings") { (error) in
                 if let error = error {
                     fatalError(error.localizedDescription)
                 }
@@ -59,38 +59,34 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
             notificationSet.frequency = row
         }
     }
-     @objc func action(sender: UISwitch) {
+    @objc func action(sender: UISwitch) {
         notificationSet.sound = soundSwitch.isOn ? 1 : 0
     }
     func postJSONData(action: String, completion:((Error?) -> Void)?) {
-        let encoder = JSONEncoder()
         let url = URL(string: dataURL + action)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        var headers = request.allHTTPHeaderFields ?? [:]
-        headers["Content-Type"] = "application/json"
-        request.allHTTPHeaderFields = headers
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        do {
-            request.httpBody = try encoder.encode(notificationSet)
-            print("Sent jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
-        } catch {
-            completion?(error)
+        guard let payload = try? JSONEncoder().encode(notificationSet) else {
+            return
         }
 
-        // Create and run a URLSession data task with our JSON encoded POST request
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: request) { (responseData, response, responseError) in
-            guard responseError == nil else {
-                completion?(responseError!)
+        let task = URLSession.shared.uploadTask(with: request, from: payload) { data, response, error in
+            if let error = error {
+                print ("error: \(error)")
                 return
             }
-            // APIs usually respond with the data you just sent in your POST request
-            if responseData != nil {
-                print("Instellingen gewijzigd")
-            } else {
-                print("No readable data received in response")
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    print ("server error")
+                    return
+            }
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("response to POST: \(dataString)")
             }
         }
         task.resume()
