@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-            print("Received in didFinishLaunchingWithOptions: \(notification)")
+            print("Received: \(notification)")
         }
         applyTheme()
         // set data path
@@ -54,6 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-        print("Received in didReceiveRemoteNotification: \(data)")
+        print("Received data: \(data)")
     }
 }

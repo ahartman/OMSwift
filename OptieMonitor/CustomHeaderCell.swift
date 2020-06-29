@@ -13,6 +13,7 @@ class CustomHeaderCell: UITableViewCell {
     @IBOutlet weak var putDeltaHeaderLabel: UILabel!
     @IBOutlet weak var indexHeaderLabel: UILabel!
     @IBOutlet weak var orderValueHeaderLabel: UILabel!
+    @IBOutlet weak var captionHeaderLabel: UILabel!
 
     let writeFormatter = DateFormatter()
     
@@ -26,5 +27,6 @@ class CustomHeaderCell: UITableViewCell {
         putPriceHeaderLabel.text = "Put"
         orderValueHeaderLabel.text = "€"
         indexHeaderLabel.text = "Index"
+        captionHeaderLabel.text = orderCaption
     }
 }

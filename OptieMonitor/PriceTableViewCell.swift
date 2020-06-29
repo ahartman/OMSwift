@@ -59,7 +59,7 @@ class PriceTableViewCell: UITableViewCell {
         numberFormatter.locale = Locale(identifier: "nl_BE")
         numberFormatter.numberStyle = .decimal
         callPriceTextLabel.text = euro +  numberFormatter.string(from: NSNumber(value: line.callValue))!
-        putPriceTextLabel.text = numberFormatter.string(from: NSNumber(value: line.putValue))!
+        putPriceTextLabel.text = euro + numberFormatter.string(from: NSNumber(value: line.putValue))!
 
         // delta
         numberFormatter.positivePrefix = numberFormatter.plusSign

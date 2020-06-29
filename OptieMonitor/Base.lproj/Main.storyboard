@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTZ-RS-Cvj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTZ-RS-Cvj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Intra Table View Controller-->
+        <!--Intraday-->
         <scene sceneID="3RR-YX-M1p">
             <objects>
-                <tableViewController storyboardIdentifier="Intraday" id="SuZ-jQ-qpD" customClass="IntraTableViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Intraday" id="SuZ-jQ-qpD" userLabel="Intraday" customClass="IntraTableViewController" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="21" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sd6-N0-rQC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="21" id="rAQ-N5-GEv" customClass="CustomHeaderCell" customModule="OptieMonitor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="50" id="rAQ-N5-GEv" customClass="CustomHeaderCell" customModule="OptieMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rAQ-N5-GEv" id="PNr-Iq-FWc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-HQ-830" userLabel="Caption Header Label">
+                                            <rect key="frame" x="8" y="6" width="359" height="19"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oyz-TO-tho">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
+                                            <rect key="frame" x="8" y="26" width="359" height="24"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="P6t-p7-sep" userLabel="Datetime Header Label">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzP-xI-oAh" userLabel="Call Price Header Label">
-                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="20.5"/>
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-qx-nRs">
-                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="24"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                     </accessibility>
@@ -52,26 +55,26 @@
                                                     <variation key="heightClass=regular" hidden="YES"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-YC-dYq" userLabel="Put Price Header Label">
-                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-qB-mG7">
-                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" hidden="YES"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svD-qz-pnd" userLabel="Order Value Header Label">
-                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="20.5"/>
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-za-SJw" userLabel="Index Header Label">
-                                                    <rect key="frame" x="287" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -80,15 +83,22 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Oyz-TO-tho" firstAttribute="top" secondItem="PNr-Iq-FWc" secondAttribute="top" id="I6J-fp-Kxi"/>
+                                        <constraint firstItem="1Pm-HQ-830" firstAttribute="leading" secondItem="Oyz-TO-tho" secondAttribute="leading" id="2Yq-3y-cds"/>
+                                        <constraint firstItem="1Pm-HQ-830" firstAttribute="top" secondItem="PNr-Iq-FWc" secondAttribute="topMargin" constant="-5" id="2bc-Xi-hjq"/>
+                                        <constraint firstItem="1Pm-HQ-830" firstAttribute="trailing" secondItem="Oyz-TO-tho" secondAttribute="trailing" id="Gmn-hy-y76"/>
+                                        <constraint firstItem="Oyz-TO-tho" firstAttribute="top" secondItem="1Pm-HQ-830" secondAttribute="top" constant="20" id="I6J-fp-Kxi"/>
                                         <constraint firstAttribute="bottom" secondItem="Oyz-TO-tho" secondAttribute="bottom" id="aza-Hl-xK1"/>
                                         <constraint firstAttribute="trailing" secondItem="Oyz-TO-tho" secondAttribute="trailing" constant="8" id="dsx-wq-Xev"/>
                                         <constraint firstItem="Oyz-TO-tho" firstAttribute="leading" secondItem="PNr-Iq-FWc" secondAttribute="leading" constant="8" id="gYi-ca-HxR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="callDeltaHeaderLabel" destination="hRf-qx-nRs" id="Yxw-9k-Yl6"/>
                                     <outlet property="callPriceHeaderLabel" destination="MzP-xI-oAh" id="Dgm-gO-IYE"/>
+                                    <outlet property="captionHeaderLabel" destination="1Pm-HQ-830" id="jCc-5Z-886"/>
                                     <outlet property="datetimeHeaderLabel" destination="P6t-p7-sep" id="CIK-JL-HCw"/>
                                     <outlet property="indexHeaderLabel" destination="Cf7-za-SJw" id="Fb5-e4-mmI"/>
                                     <outlet property="orderValueHeaderLabel" destination="svD-qz-pnd" id="2TL-Vl-7gJ"/>
@@ -97,10 +107,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="21" id="E0H-I6-7g7" customClass="PriceTableViewCell" customModule="OptieMonitor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E0H-I6-7g7" id="dvc-J0-F4Z">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="80E-cc-7oe">
@@ -171,10 +181,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FooterCell" rowHeight="21" id="qzv-ck-uiL" userLabel="FooterCell" customClass="CustomFooterCell" customModule="OptieMonitor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="70" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qzv-ck-uiL" id="JDW-Pj-XkJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-hA-SLE">
@@ -256,7 +266,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Quotes ophalen">
                                 <attributes>
-                                    <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                    <font key="NSFont" metaFont="label" size="12"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -286,7 +296,7 @@
         <!--Pager-->
         <scene sceneID="6im-o2-DJg">
             <objects>
-                <pageViewController transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Q4-e0-BUl" userLabel="Pager" customClass="Pager" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController modalTransitionStyle="partialCurl" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Q4-e0-BUl" userLabel="Pager" customClass="Pager" customModule="OptieMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Order" id="vtm-bQ-atR">
                         <barButtonItem key="rightBarButtonItem" image="settings" landscapeImage="settings" id="YJ3-sZ-VWR">
                             <connections>
@@ -312,26 +322,26 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IET-Zu-bFI" id="ncf-Fl-Q0F">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rib-8q-hdG">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
+                                            <rect key="frame" x="8" y="0.0" width="359" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-k8-vnn" userLabel="Datetime Header Label">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSG-Cd-04W" userLabel="Call Price Header Label">
-                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="20.5"/>
+                                                    <rect key="frame" x="72" y="0.0" width="71.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOk-Gm-noO">
-                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <rect key="frame" x="143.5" y="0.0" width="0.0" height="21"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                     </accessibility>
@@ -341,26 +351,26 @@
                                                     <variation key="heightClass=compact" hidden="NO"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-lY-ALy" userLabel="Put Price Header Label">
-                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="143.5" y="0.0" width="72" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put Delta Header Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcI-xh-hU7">
-                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="20.5"/>
+                                                    <rect key="frame" x="215.5" y="0.0" width="0.0" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=compact" hidden="NO"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA8-cw-q2f" userLabel="Order Value Header Label">
-                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="20.5"/>
+                                                    <rect key="frame" x="215.5" y="0.0" width="71.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-Kp-lV4" userLabel="Index Header Label">
-                                                    <rect key="frame" x="287" y="0.0" width="72" height="20.5"/>
+                                                    <rect key="frame" x="287" y="0.0" width="72" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -389,7 +399,7 @@
                                 <rect key="frame" x="0.0" y="49" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QiY-5y-C2M" id="bhd-h6-oaV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bd5-1H-ozd">
@@ -463,7 +473,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8B-Ln-3TZ" id="Vc5-GA-pQk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RHa-bD-88S">
@@ -553,37 +563,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie niveau" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsC-Rx-S2x">
-                                <rect key="frame" x="121" y="74" width="133" height="21"/>
+                                <rect key="frame" x="121" y="54" width="133" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2au-cx-EJh">
-                                <rect key="frame" x="27.5" y="95" width="320" height="200"/>
+                                <rect key="frame" x="27.5" y="75" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="lxa-HK-PBT"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie frequentie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-Mb-Izr">
-                                <rect key="frame" x="107" y="295" width="161" height="21"/>
+                                <rect key="frame" x="107" y="275" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2D-At-byK">
-                                <rect key="frame" x="27.5" y="315" width="320" height="200"/>
+                                <rect key="frame" x="27.5" y="295" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="1kz-yW-Ttj"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificatie met geluid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN1-sV-wEG">
-                                <rect key="frame" x="50" y="535" width="163" height="21"/>
+                                <rect key="frame" x="50" y="515" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RE7-Ah-ezs">
-                                <rect key="frame" x="235" y="530" width="51" height="31"/>
+                                <rect key="frame" x="235" y="510" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -636,7 +646,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTZ-RS-Cvj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NCy-LL-WA9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -649,8 +659,8 @@
             <point key="canvasLocation" x="545.625" y="190.14084507042253"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="settings" width="19.200000762939453" height="19.200000762939453"/>
-    </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+    </resources>
 </document>

@@ -10,6 +10,7 @@ import Foundation
 var intraLines = [QuoteLine]()
 var interLines = [QuoteLine]()
 var quotesDatetime = Date()
+var orderCaption = String()
 var notificationSet = NotificationSetting(frequency: 0, severity: 0, sound: 0, orderID: 0)
 var notificationSetOrg = NotificationSetting(frequency: 0, severity: 0, sound: 0, orderID: 0)
 var incoming: RestData?
@@ -44,8 +45,17 @@ struct RestData: Decodable {
     let notificationSettings: NotificationSetting
     let intraday: [QuoteLine]?
     let interday: [QuoteLine]?
+    let caption: String?
 }
 
 struct Result: Decodable {
     var status: String
+}
+
+struct Background: Codable {
+    var counter: Int
+}
+
+struct Person: Codable {
+    var name: String
 }
