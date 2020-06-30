@@ -59,7 +59,7 @@ class IntraTableViewController: OMTableViewController {
                      DispatchQueue.main.sync {
                         intraLines = incomingData.intraday ?? intraLines
                         interLines = incomingData.interday ?? interLines
-                        quotesDatetime = incomingData.datetime!
+                        quotesDatetime = incomingData.datetime ?? quotesDatetime
                         notificationSet = incomingData.notificationSettings
                         notificationSetOrg = incomingData.notificationSettings
                         orderCaption = incomingData.caption ?? "no caption"

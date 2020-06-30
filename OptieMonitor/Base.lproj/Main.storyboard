@@ -325,6 +325,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ept-6n-3H5" userLabel="Caption Header Label">
+                                            <rect key="frame" x="8" y="1" width="359" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rib-8q-hdG">
                                             <rect key="frame" x="8" y="0.0" width="359" height="21"/>
                                             <subviews>
@@ -388,6 +399,7 @@
                                 <connections>
                                     <outlet property="callDeltaHeaderLabel" destination="WOk-Gm-noO" id="wpR-Gy-BbK"/>
                                     <outlet property="callPriceHeaderLabel" destination="vSG-Cd-04W" id="n3g-Pp-Nvk"/>
+                                    <outlet property="captionHeaderLabel" destination="ept-6n-3H5" id="fu3-Ja-ecz"/>
                                     <outlet property="datetimeHeaderLabel" destination="lYj-k8-vnn" id="Pl7-n8-Cyb"/>
                                     <outlet property="indexHeaderLabel" destination="5bd-Kp-lV4" id="0QR-KD-RiA"/>
                                     <outlet property="orderValueHeaderLabel" destination="JA8-cw-q2f" id="3yC-Sp-pxX"/>
