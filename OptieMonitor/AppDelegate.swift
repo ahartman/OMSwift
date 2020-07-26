@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set data path
         #if targetEnvironment(simulator)
         dataURL = "http://cake.local/orders.json?id=ahartman&action="
+        print(dataURL)
         #else
         dataURL = "https://nastifou.synology.me:1010/orders.json?id=ahartman&action="
         #endif

@@ -12,8 +12,7 @@ var interLines = [QuoteLine]()
 var quotesDatetime = Date()
 var orderCaption = String()
 var notificationSet = NotificationSetting(frequency: 0, severity: 0, sound: 0, orderID: 0)
-var notificationSetOrg = NotificationSetting(frequency: 0, severity: 0, sound: 0, orderID: 0)
-var incoming: RestData?
+//var notificationSetOrg = NotificationSetting(frequency: 0, severity: 0, sound: 0, orderID: 0)
 
 struct QuoteLine: Decodable {
     var datetime: Date
@@ -41,21 +40,9 @@ struct NotificationSetting: Codable, Equatable {
 
 struct RestData: Decodable {
     let message: String?
-    let datetime: Date?
+    let datetime: Date
     let notificationSettings: NotificationSetting
-    let intraday: [QuoteLine]?
-    let interday: [QuoteLine]?
+    let intraday: [QuoteLine]
+    let interday: [QuoteLine]
     let caption: String?
-}
-
-struct Result: Decodable {
-    var status: String
-}
-
-struct Background: Codable {
-    var counter: Int
-}
-
-struct Person: Codable {
-    var name: String
 }

@@ -13,6 +13,7 @@ class NotificationManagerViewController: UIViewController, UIPickerViewDelegate,
     
     var severityData = ["Alle mutaties","Onveranderd en negatief","Laatste mutatie negatief","Vandaag negatief","Order negatief","Geen meldingen"]
     var frequencyData = ["Elk kwartier","Elk half uur","Elk uur","Geen"]
+    var notificationSetOrg = notificationSet
 
     override func viewDidLoad() {
         super.viewDidLoad()

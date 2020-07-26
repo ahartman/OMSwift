@@ -8,6 +8,8 @@
 import UIKit
 
 class IntraTableViewController: OMTableViewController {
+    var incoming: RestData?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // enter foreground
@@ -47,21 +49,22 @@ class IntraTableViewController: OMTableViewController {
     func getJsonData(action: String) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+
         let url = URL(string: dataURL + action + "&apns=" + deviceTokenString)!
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             do {
                 if let incoming = data
                 {
-                    print(incoming)
                     UserDefaults.standard.set(incoming, forKey: "DataSet")
                     let incomingData = try decoder.decode(RestData.self, from: incoming)
-                     DispatchQueue.main.sync {
-                        intraLines = incomingData.intraday ?? intraLines
-                        interLines = incomingData.interday ?? interLines
-                        quotesDatetime = incomingData.datetime ?? quotesDatetime
+                   //print(incomingData)
+
+                    DispatchQueue.main.async {
+                        intraLines = incomingData.intraday
+                        interLines = incomingData.interday
+                        quotesDatetime = incomingData.datetime
                         notificationSet = incomingData.notificationSettings
-                        notificationSetOrg = incomingData.notificationSettings
                         orderCaption = incomingData.caption ?? "no caption"
                         self.tableView.reloadData()
                     }
