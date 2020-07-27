@@ -51,6 +51,7 @@ class IntraTableViewController: OMTableViewController {
         decoder.dateDecodingStrategy = .iso8601
 
         let url = URL(string: dataURL + action + "&apns=" + deviceTokenString)!
+        print(url)
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             do {
@@ -58,7 +59,7 @@ class IntraTableViewController: OMTableViewController {
                 {
                     UserDefaults.standard.set(incoming, forKey: "DataSet")
                     let incomingData = try decoder.decode(RestData.self, from: incoming)
-                   //print(incomingData)
+                   print(incomingData)
 
                     DispatchQueue.main.async {
                         intraLines = incomingData.intraday
